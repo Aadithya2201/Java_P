@@ -1,6 +1,7 @@
+package Arrays;
 import java.util.Scanner;
 
-public class lowertri {
+public class uppertri {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
@@ -13,24 +14,24 @@ public class lowertri {
             }
         }
 
-        boolean isLowerTriangular = true;
+        boolean isUpperTriangular = true;
 
-        for (int i = 0; i < a; i++) {
-            for (int j = i + 1; j < a; j++) { // only check upper triangle (i < j)
+        for (int i = 1; i < a; i++) {
+            for (int j = 0; j < i; j++) { // only check upper triangle (i < j)
                 if (arr[i][j] != 0) {
-                    isLowerTriangular = false;
+                    isUpperTriangular = false;
                     break;
                 }
             }
-            if (!isLowerTriangular) {
+            if (!isUpperTriangular) {
                 break;
             }
         }
 
-        if (isLowerTriangular) {
-            System.out.println("Matrix is lower triangular.");
+        if (isUpperTriangular) {
+            System.out.println("Matrix is Upper triangular.");
         } else {
-            System.out.println("Matrix is NOT lower triangular.");
+            System.out.println("Matrix is NOT Upper triangular.");
         }
         sc.close();
     }
